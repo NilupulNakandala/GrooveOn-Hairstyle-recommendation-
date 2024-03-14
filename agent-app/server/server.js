@@ -1,10 +1,15 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const mysql = require("mysql2");
+//const mysql = require("mysql2");
+
+const mysql = require('mysql');
+
+
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+//const PORT = process.env.PORT || 5000;
+const port = 3001;
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -13,8 +18,8 @@ app.use(cors());
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "Abcd@12341234",
-  database: "GrooveON",
+  password: "mySQL@123",//password for the local sql server
+  database: "feedback",
 });
 
 db.connect((err) => {
@@ -24,6 +29,10 @@ db.connect((err) => {
     console.log("Connected to the database");
   }
 });
+//guys, create a table in mysql "feedback" 
+//run this command --> CREATE TABLE feedback (id INT AUTO_INCREMENT PRIMARY KEY, message TEXT);
+
+
 
 // Get reviews endpoint
 app.get("/api/reviews", (req, res) => {
@@ -36,6 +45,59 @@ app.get("/api/reviews", (req, res) => {
     }
   });
 });
+
+// REST API endpoints  --sql code end with comment mySQL@123
+app.post('/api/feedback', (req, res) => {
+  const { message } = req.body;
+
+  db.query('INSERT INTO feedback (message) VALUES (?)', [message], (err, result) => {
+    if (err) {
+      console.error('MySQL query error:', err);
+      res.status(500).send('Internal Server Error');
+    } else {
+      res.status(201).send('Feedback added successfully');
+    }
+  });
+});
+app.get('/api/feedback', (req, res) => {
+  db.query('SELECT * FROM feedback', (err, results) => {
+    if (err) {
+      console.error('MySQL query error:', err);
+      res.status(500).send('Internal Server Error');
+    } else {
+      res.json(results);
+    }
+  });
+}); 
+app.delete('/api/feedback/:id', (req, res) => {
+  const feedbackId = req.params.id;
+
+  db.query('DELETE FROM feedback WHERE id = ?', [feedbackId], (err, result) => {
+    if (err) {
+      console.error('MySQL query error:', err);
+      res.status(500).send('Internal Server Error');
+    } else {
+      res.status(200).send('Feedback deleted successfully');
+    }
+  });
+});
+app.put('/api/feedback/:id', (req, res) => {
+  const feedbackId = req.params.id;
+  const { message } = req.body;
+
+  db.query('UPDATE feedback SET message = ? WHERE id = ?', [message, feedbackId], (err, result) => {
+    if (err) {
+      console.error('MySQL query error:', err);
+      res.status(500).send('Internal Server Error');
+    } else {
+      res.status(200).send('Feedback updated successfully');
+    }
+  });
+});
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
+// mySQL code endpoint -- mySQL@123
 
 // Add review endpoint
 app.post("/api/reviews", (req, res) => {

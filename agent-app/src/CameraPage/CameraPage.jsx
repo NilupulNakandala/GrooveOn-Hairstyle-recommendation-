@@ -79,7 +79,7 @@ const CameraPage = () => {
         {imageSrc && (
           <div>
             <img src={imageSrc} alt="Captured" className="captured-image" />
-            <p>Preview of Captured Image</p>
+            <p>Preview of Upload Image</p>
           </div>
         )}
 
