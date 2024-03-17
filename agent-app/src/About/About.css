@@ -1,23 +1,23 @@
-/* About.css */
+
 
 .about-section {
-  background-color: #f8f9fa; /* Light gray background color */
-  padding: 50px 0; /* Adjust padding as needed */
+  background-color: #f8f9fa; 
+  padding: 50px 0; 
 }
 
 .about-title {
   font-size: 2.5rem;
-  color: #343a40; /* Dark text color */
+  color: #343a40; 
 }
 
 .lead.about-text {
   font-size: 1.5rem;
-  color: #007bff; /* Blue text color for lead text */
+  color: #007bff; 
 }
 
 .about-text {
   font-size: 1.2rem;
-  color: #6c757d; /* Dark gray text color */
+  color: #6c757d; 
 }
 
-/* Add more styles as needed */
+

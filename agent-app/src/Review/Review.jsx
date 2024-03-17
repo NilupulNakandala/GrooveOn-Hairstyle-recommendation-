@@ -1,68 +1,40 @@
-import React, { useState, useEffect } from "react";
-import "./Review.css";
+import React, { useState } from "react";
+import "./Review.css"; 
 
 const ReviewPage = () => {
-  const [reviews, setReviews] = useState([]);
+  const [reviews, setReviews] = useState([
+    
+  ]);
+
   const [newReview, setNewReview] = useState({
     user: "",
     rating: 5,
     comment: "",
   });
 
-  useEffect(() => {
-    // Fetch reviews from the server when the component mounts
-    fetchReviews();
-  }, []);
-
-  const fetchReviews = async () => {
-    try {
-      const response = await fetch("http://localhost:5000/api/reviews");
-      if (response.ok) {
-        const data = await response.json();
-        setReviews(data);
-      } else {
-        console.error("Failed to fetch reviews");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNewReview((prevReview) => ({ ...prevReview, [name]: value }));
   };
 
-  const handleAddReview = async () => {
-    try {
-      const response = await fetch("http://localhost:5000/api/reviews", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newReview),
+  const handleAddReview = () => {
+    if (newReview.user && newReview.comment) {
+      setReviews((prevReviews) => [
+        ...prevReviews,
+        { id: prevReviews.length + 1, ...newReview },
+      ]);
+      setNewReview({
+        user: "",
+        rating: 5,
+        comment: "",
       });
-
-      if (response.ok) {
-        const addedReview = await response.json();
-        setReviews((prevReviews) => [...prevReviews, addedReview]);
-        setNewReview({
-          user: "",
-          rating: 5,
-          comment: "",
-        });
-      } else {
-        console.error("Failed to add review");
-      }
-    } catch (error) {
-      console.error("Error:", error);
     }
   };
 
   return (
     <div className="review-page-container">
       <h1 className="review-page-title">Customer Reviews</h1>
-
+      
       <div className="reviews-list">
         {reviews.map((review) => (
           <div key={review.id} className="review-card">

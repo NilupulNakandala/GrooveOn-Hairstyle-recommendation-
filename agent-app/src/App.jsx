@@ -12,6 +12,12 @@ import Contact from "./Contact/Contact";
 import Hairstyles from "./Hairstyles/Hairstyles";
 import ReviewPage from "./Review/Review";
 import CameraPage from "./CameraPage/CameraPage";
+import Diamond from "./Diamond/Diamond";
+import Heart from "./Heart/Heart";
+import Oblong from "./Oblong/Oblong";
+import Round from "./Round/Round";
+import Square from "./Square/Square";
+
 
 
 function App() {
@@ -28,6 +34,12 @@ function App() {
         
         <Route path="/hairstyles" element={<Hairstyles />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
+        <Route path="/diamond" element={<Diamond />}></Route>
+        <Route path="/heart" element={<Heart />}></Route>
+        <Route path="/oblong" element={<Oblong />}></Route>
+        <Route path="/round" element={<Round/>}></Route>
+        <Route path="/square" element={<Square/>}></Route>
+        
         <Route path="/review" element={<ReviewPage/>}></Route>
         <Route path="/camerapage" element={<CameraPage/>}></Route>
 

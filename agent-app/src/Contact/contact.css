@@ -2,7 +2,7 @@
   max-width: 600px;
   margin: 60px auto 0;
   padding: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Change font */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
   background-color: #f0f0f0; 
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
@@ -29,7 +29,7 @@ label {
   font-weight: bold;
   color: #555;
   margin-bottom: 8px;
-  font-size: 16px; /* Increase font size */
+  font-size: 16px; 
 }
 
 input,

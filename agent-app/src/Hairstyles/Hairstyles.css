@@ -7,7 +7,7 @@
 
 .hairstyles-title {
     font-size: 24px;
-    color: #3498db; /* Primary Color */
+    color: #3498db;
 }
 
 .hairstyles-grid,
@@ -20,7 +20,7 @@
 
 .hairstyle-card,
 .favorite-card {
-    border: 1px solid #3498db; /* Primary Color */
+    border: 1px solid #3498db; 
     border-radius: 8px;
     overflow: hidden;
 }
@@ -28,8 +28,8 @@
 .hairstyle-image,
 .favorite-image {
     width: 100%;
-    max-height: 300px; /* Adjust the max-height for smaller images */
-    border-bottom: 1px solid #3498db; /* Primary Color */
+    max-height: 300px; 
+    border-bottom: 1px solid #3498db;
 }
 
 .hairstyle-name,
@@ -39,7 +39,7 @@
 }
 
 button {
-    background-color: #3498db; /* Primary Color */
+    background-color: #3498db; 
     color: white;
     padding: 10px;
     border: none;
@@ -50,5 +50,5 @@ button {
 }
 
 button:hover {
-    background-color: #2980b9; /* Darker shade of Primary Color */
+    background-color: #2980b9; 
 }
