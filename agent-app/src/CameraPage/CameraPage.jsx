@@ -44,11 +44,42 @@ const CameraPage = () => {
       reader.readAsDataURL(file);
     }
   };
+  const handleUploadPhoto = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/get-item/res'); 
+      
+      if (response.ok) {
+        const data = await response.json(); 
+        console.log('Response from server:', data);
+        const shape = data.shape;
+        if (shape === 'stdout: diamond') {
+          window.location.href = '/about';
+        } else if (shape === 'stdout: heart') {
+          window.location.href = '/about';
+        } else if(shape === 'stdout: oblong'){
+          window.location.href = '/about'
+        }else if (shape === 'stdout: square') {
+          window.location.href = '/about';
+        }else if (shape === 'stdout: round') {
+          window.location.href = '/about';
+        }else {
+          console.warn('Unknown shape received:', shape);
+        }
+        // Handle successful response (e.g., display data, update UI)
+      } else {
+        console.error('Error fetching data:', await response.text());
+        // Handle error response
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      // Handle network or other errors
+    }
+  };
 
   const uploadImage = async () => {
     // Send the captured or uploaded image to the backend
     try {
-      const response = await fetch('/api/upload', {
+      const response = await fetch('http://localhost:3000/get-item/res', {//'/api/upload'
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -114,7 +145,7 @@ const CameraPage = () => {
         />
 
         {/* Button to upload the image to the database */}
-        <button onClick={uploadImage}>Upload to Database</button>
+        <button onClick={handleUploadPhoto}>Photo Upload</button>
       </div>
     </div>
   );

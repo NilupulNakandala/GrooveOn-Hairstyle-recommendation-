@@ -17,6 +17,7 @@
     "react-datepicker": "^4.25.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.0",
+    "react-webcam": "^7.2.0",
     "react-widgets": "^5.8.4"
   },
   "devDependencies": {
