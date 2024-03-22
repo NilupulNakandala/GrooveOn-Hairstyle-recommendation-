@@ -46,57 +46,54 @@ const CameraPage = () => {
   };
   const handleUploadPhoto = async () => {
     try {
-      const response = await fetch('http://localhost:3000/get-item/res'); 
-      
+      const response = await fetch('http://localhost:3000/get-item/res',{method:'GET'}); 
+
+      // const data = await response.json(); 
+      // const Oshape = data.predictionOutput;
+      // console.log('Response from server:', data);
+      // const shape = data.shape;
+
       if (response.ok) {
         const data = await response.json(); 
+        const Oshape = data.predictionOutput;
         console.log('Response from server:', data);
         const shape = data.shape;
-        if (shape === 'stdout: diamond') {
-          window.location.href = '/about';
-        } else if (shape === 'stdout: heart') {
-          window.location.href = '/about';
-        } else if(shape === 'stdout: oblong'){
-          window.location.href = '/about'
-        }else if (shape === 'stdout: square') {
-          window.location.href = '/about';
-        }else if (shape === 'stdout: round') {
-          window.location.href = '/about';
-        }else {
-          console.warn('Unknown shape received:', shape);
+        switch (Oshape) {
+          case 'heart\r\n':
+            window.location.href = '/Heart'; 
+            break;
+          case 'diamond\r\n':
+            window.location.href = '/Diamond'; 
+            break;
+          case 'square\r\n':
+            window.location.href = '/Square'; 
+            break;
+          case 'round\r\n':
+            window.location.href = '/Round'; 
+            break;
+          case 'oblong\r\n':
+            window.location.href = '/Oblong'; 
+            break;
+            
+          default:
+            console.warn('Unknown shape received:', shape);
+            window.location.href = '/Home';
+            break;
         }
-        // Handle successful response (e.g., display data, update UI)
+        
       } else {
         console.error('Error fetching data:', await response.text());
+        window.location.href = '/Review'
         // Handle error response
       }
     } catch (error) {
       console.error('Error fetching data:', error);
+      window.location.href = '/Hairstyles'
       // Handle network or other errors
     }
   };
 
-  const uploadImage = async () => {
-    // Send the captured or uploaded image to the backend
-    try {
-      const response = await fetch('http://localhost:3000/get-item/res', {//'/api/upload'
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ image: imageSrc.split(',')[1] }), // Extracting the base64 data part
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        console.log('Image uploaded successfully:', result);
-      } else {
-        console.error('Failed to upload image');
-      }
-    } catch (error) {
-      console.error('Error uploading image:', error);
-    }
-  };
+  
 
   return (
     <div className="camera-page-container">

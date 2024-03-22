@@ -5,10 +5,10 @@ import cv2
 import sys
 
 # Load the model
-loaded_model = load(r"C:\Users\admin\Desktop\newrepo\server\model\face_shape_classifier.joblib")
+loaded_model = load('model/face_shape_classifier.joblib')#r"C:\Users\admin\Desktop\newrepo\server\model\face_shape_classifier.joblib"
 
 # Load the scaler used during training 
-scaler = StandardScaler()  
+#scaler = StandardScaler()  
 
 import tkinter
 from tkinter import filedialog

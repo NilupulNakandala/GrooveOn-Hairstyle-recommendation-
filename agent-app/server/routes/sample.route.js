@@ -9,30 +9,18 @@ router.get('/', SampleController.getAll)
 
 
 router.get('/res', async(req, res) => {
-    // const imagePath = req.query.imagePath;
-
-    // if (!imagePath) {
-    //     return res.status(400).send({ error: 'Missing image path parameter' });
-    // }
-
-    // try {
-    //     const predictedShape = await shapePrediction.predictShape(imagePath);
-    //     res.send({ predictedShape });
-    // } catch (error) {
-    //     console.error('Error during prediction:', error);
-    //     res.status(500).send({ error: 'Failed to predict face shape' });
-    // }
-
-
-
-    const childPython = spawn("python", ["C:\\Users\\admin\\Desktop\\newrepo\\server\\model\\shapePrediction.py"])
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173'); // Allow requests from your frontend origin
+    
+    const childPython = spawn("python", ["model\\shapePrediction.py"])//"C:\\Users\\admin\\Desktop\\Nilupul Nakandala\\IIT\\class\\2nd Year (Level 5)\\2nd Semester\\SDGP\\GrooveOn-Hairstyle-recommendation-\\agent-app\\server\\model\\face_shape_classifier.joblib"
     let data;
     childPython.stdout.on('data', (data) => {
         data = data.toString()
         console.log('stdout:', data.toString())
-        res.send({
-            data_object: data
-        })
+        const predictionOutput = data;
+        res.json({predictionOutput});
+        // res.send({
+        //     data_object: data
+        // })
     })
     childPython.stderr.on('data', (data) => {
         data = data.toString()
