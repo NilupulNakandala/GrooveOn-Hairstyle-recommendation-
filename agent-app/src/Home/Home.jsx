@@ -8,7 +8,7 @@ import two from "/public/assets/Home/hair2.jpg";
 const Home = () => {
   return (
     <div>
-      <div className="jumbotron mt-3">
+      <div className="jumbotron">
         <h1 className="display-4">Welcome to GrooveON!</h1>
         <p className="lead">
           Your Ultimate Destination for Perfect Hairstyles. Explore the latest trends, find your ideal look, and transform your appearance with just a scan.
@@ -26,8 +26,9 @@ const Home = () => {
           Get Recommendations
         </a>
       </div>
-
-      <Carousel>
+     <div>
+      <h1 className=" word">Trending Hairstyles: </h1>
+      <Carousel fade={true}>
         <Carousel.Item>
           <img className="d-block w-100" src={one} alt="Hairstyle Photo 1" />
         </Carousel.Item>
@@ -35,6 +36,7 @@ const Home = () => {
           <img className="d-block w-100" src={two} alt="Hairstyle Photo 2" />
         </Carousel.Item>
       </Carousel>
+      </div>
     </div>
   );
 };
