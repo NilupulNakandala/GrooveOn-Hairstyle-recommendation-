@@ -4,6 +4,7 @@
   background-color: #2c3e50; 
   color: #ecf0f1; 
   padding: 3rem;
+  margin-top: 88px;
   text-align: center;
 }
 
@@ -23,10 +24,17 @@
   margin-top: 1rem;
 }
 
-.my-carousel {
-  margin-top: 2rem;
+.d-block {
+  margin: 0rem 2rem 2rem 0rem;
+  border-radius: 10%;
+  
 }
 
+.word{
+  margin:2%;
+  
+
+}
 
 
 
