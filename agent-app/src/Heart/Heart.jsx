@@ -22,6 +22,7 @@ const Heart = () => {
           </div>
         </div>
         <div className="heart-bottom-carts">
+          <h1>Recommended Hairstyles </h1>
           <div className="row">
             <div className="col">
               <div className="cart">
