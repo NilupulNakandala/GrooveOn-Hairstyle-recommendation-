@@ -20,6 +20,7 @@
     flex-direction: row;
     justify-content: space-around;
     margin-bottom: 15px;
+    padding: 0% 10% 0 10%;
   }
   
   .heart-bottom-carts .col {
@@ -34,13 +35,27 @@
     text-align: center;
   }
   
-  .cart img {
+  ..cart img {
     max-width: 100%;
-    border-radius: 7px;
+    max-height: 15rem;
+    border-radius: 5%;
     margin-bottom: 7px;
   }
   
   .cart p {
     font-size: 1rem;
   }
+  .jumbotron{
+    padding-top:5%
+  }
+  .text-cart{
+    margin-bottom: 10%;
+  }
+
+  h1{
+    font-weight:bold;
+    text-align: center;
+  }
+  
+
   
