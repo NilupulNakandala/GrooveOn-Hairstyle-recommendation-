@@ -10,7 +10,7 @@ const Oblong = () => {
   return (
     <div>
       <div className="jumbotron mt-3">
-        <h1 className="display-4">Oblong Shape</h1>
+        <h1 className="display-4">Your Face Shape is Oblong Shape</h1>
       </div>
       <div className="oblong-container">
         <div className="oblong-top-cart">
@@ -22,6 +22,7 @@ const Oblong = () => {
           </div>
         </div>
         <div className="oblong-bottom-carts">
+           <h1>Recommended Hairsyles </h1>
           <div className="row">
             <div className="col">
               <div className="cart">
