@@ -2,7 +2,8 @@
 
 
 .container {
-    background-color: #f8f9fa;
+   display: inline;
+   padding-left: 10% !important;
   }
  
   
@@ -58,5 +59,8 @@
     .col-md-5 {
       margin-top: 20px;
     }
+  }
+  .row{
+    padding-left: 15%;
   }
   
