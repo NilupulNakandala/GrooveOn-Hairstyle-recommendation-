@@ -43,7 +43,7 @@ const Hairstyles = () => {
       </div>
 
       <div className="favorites-section">
-        <h2>Favorites</h2>
+        <h1>User Favorite Hairstyles</h1>
         <div className="favorites-grid">
           {favorites.map((favorite) => (
             <div key={favorite.id} className="favorite-card">
