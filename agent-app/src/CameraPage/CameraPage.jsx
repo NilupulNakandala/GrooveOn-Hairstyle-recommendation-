@@ -131,16 +131,10 @@ const CameraPage = () => {
           </div>
         )}
 
-        <label htmlFor="fileInput">Upload a Image:</label>
-        <input
-          type="file"
-          id="fileInput"
-          accept="image/*"
-          onChange={handleFileChange}
-        />
+        
 
         {/* Button to upload the image to the database */}
-        <button onClick={handleUploadPhoto}>Upload</button>
+        <button onClick={handleUploadPhoto}>Photo Upload</button>
       </div>
     </div>
   );
