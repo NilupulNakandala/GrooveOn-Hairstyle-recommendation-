@@ -10,7 +10,7 @@ const Round = () => {
   return (
     <div>
       <div className="jumbotron mt-3">
-        <h1 className="display-4">Round Shape</h1>
+        <h1 className="display-4">Your Face Shape is Round Shape</h1>
       </div>
       <div className="round-container">
         <div className="round-top-cart">
@@ -22,6 +22,7 @@ const Round = () => {
           </div>
         </div>
         <div className="round-bottom-carts">
+          <h1>Recommended Hairstyles </h1>
           <div className="row">
             <div className="col">
               <div className="cart">
