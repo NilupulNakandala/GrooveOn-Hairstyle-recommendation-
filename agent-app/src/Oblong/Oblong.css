@@ -7,12 +7,12 @@
   
   .oblong-top-cart {
     margin-bottom: 15px;
-    text-align: center; /* Center the text inside the cart */
+    text-align: center; /
   }
   
   .oblong-top-cart .cart {
     max-width: 60%;
-    margin: 0 auto; /* Center the cart horizontally */
+    margin: 0 auto; 
   }
   
   .oblong-bottom-carts .row {

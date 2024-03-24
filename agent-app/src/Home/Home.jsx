@@ -18,10 +18,11 @@ const Home = () => {
           Ready for a new hairstyle? Start your journey with GrooveON today.
         </p>
         <a
-          className="btn btn-primary btn-lg"
+          id="recommendations-btn"
+          className="btn btn-primary btn-lg custom-btn"
           href="./cameraPage"
           role="button"
-          style={{ padding: "10px 16px", border: "none" }}
+          style={{ padding: "10px 16px", border: "none", color: "black" }} 
         >
           Get Recommendations
         </a>

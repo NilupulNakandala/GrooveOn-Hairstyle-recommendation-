@@ -2,60 +2,34 @@
 
 
 .container {
-    background-color: #f8f9fa;
+    background-color: #d2b48c;
   }
  
   
   h5 {
     color: #343a40;
   }
-  
-  .nav-link {
-    color: #6c757d;
-  }
-  
-  .nav-link:hover {
-    text-decoration: underline;
-  }
-  
-  
-  .text-muted {
-    color: #6c757d;
-  }
-  
-  /* Address styles */
   .text-muted.address {
     font-style: italic;
   }
-  
-  /* Newsletter form styles */
   .form-control {
     margin-bottom: 10px;
   }
-  
   .btn-group {
     margin-top: 10px;
   }
-  .nav-link:hover {
-    text-decoration: none;
-  }
   
-  /* Social media links styles */
-  .list-unstyled li a {
+   .list-unstyled li a {
     color: #212529;
   }
-  
   .list-unstyled li a:hover {
     text-decoration: none;
   }
-  
-  /* Responsive styles */
   @media (max-width: 768px) {
     .col-md-2 {
       margin-bottom: 20px;
     }
-  
-    .col-md-5 {
+     .col-md-5 {
       margin-top: 20px;
     }
   }

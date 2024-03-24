@@ -17,6 +17,9 @@ import Heart from "./Heart/Heart";
 import Oblong from "./Oblong/Oblong";
 import Round from "./Round/Round";
 import Square from "./Square/Square";
+import Errorpage from "./Errorpage/Erropage";
+
+
 
 
 
@@ -39,6 +42,7 @@ function App() {
         <Route path="/oblong" element={<Oblong />}></Route>
         <Route path="/round" element={<Round/>}></Route>
         <Route path="/square" element={<Square/>}></Route>
+        <Route path="/errorpage" element={<Errorpage/>}></Route>
         
         <Route path="/review" element={<ReviewPage/>}></Route>
         <Route path="/camerapage" element={<CameraPage/>}></Route>

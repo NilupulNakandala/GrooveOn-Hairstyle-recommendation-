@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Hairstyles.css";
+import { Container, Row, Col, Card, Button } from "react-bootstrap"; 
 
 const Hairstyles = () => {
   const [hairstylesData, setHairstylesData] = useState([
@@ -15,46 +16,70 @@ const Hairstyles = () => {
   ]);
 
   const [favorites, setFavorites] = useState([]);
+  const [addedToFavorite, setAddedToFavorite] = useState(null);
 
   const addToFavorites = (id) => {
     const selectedHairstyle = hairstylesData.find((hairstyle) => hairstyle.id === id);
-
-    // Check if the item is not already in favorites
     if (!favorites.some((favorite) => favorite.id === selectedHairstyle.id)) {
       setFavorites((prevFavorites) => [...prevFavorites, selectedHairstyle]);
+      setAddedToFavorite(id);
     }
   };
 
   const removeFromFavorites = (id) => {
     setFavorites((prevFavorites) => prevFavorites.filter((favorite) => favorite.id !== id));
+    setAddedToFavorite(null); // Reset addedToFavorite state when removing from favorites
   };
 
   return (
-    <div className="hairstyles-container">
-      <h1 className="hairstyles-title">Explore Modern Men's Hairstyles</h1>
-      <div className="hairstyles-grid">
+    <Container className="py-4">
+      <h1 className="text-center mb-4">Explore Modern Men's Hairstyles</h1>
+      <Row>
         {hairstylesData.map((hairstyle) => (
-          <div key={hairstyle.id} className="hairstyle-card">
-            <img src={hairstyle.image} alt={hairstyle.name} className="hairstyle-image" />
-            <p className="hairstyle-name">{hairstyle.name}</p>
-            <button onClick={() => addToFavorites(hairstyle.id)}>Add to Favorites</button>
-          </div>
+          <Col key={hairstyle.id} md={4} sm={6} xs={12} className="mb-3">
+            <Card className="h-100">
+              <Card.Img variant="top" src={hairstyle.image} alt={hairstyle.name} style={{ width: "355px", height: "355px" }} />
+              <Card.Body className="d-flex flex-column justify-content-between">
+                <div>
+                  <Card.Title className="text-center">{hairstyle.name}</Card.Title>
+                </div>
+                <div className="text-center">
+                  <Button
+                    id="favorite"
+                    onClick={() => addToFavorites(hairstyle.id)}
+                    className="bg-orange"
+                    disabled={addedToFavorite === hairstyle.id}
+                  >
+                    {addedToFavorite === hairstyle.id ? "Added to Favorites" : "Add to Favorites"}
+                  </Button>
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
         ))}
-      </div>
+      </Row>
 
-      <div className="favorites-section">
-        <h2>Favorites</h2>
-        <div className="favorites-grid">
+      <div className="favorites-section mt-4">
+        <h2 className="text-center">Favorites</h2>
+        <Row>
           {favorites.map((favorite) => (
-            <div key={favorite.id} className="favorite-card">
-              <img src={favorite.image} alt={favorite.name} className="favorite-image" />
-              <p className="favorite-name">{favorite.name}</p>
-              <button onClick={() => removeFromFavorites(favorite.id)}>Remove from Favorites</button>
-            </div>
+            <Col key={favorite.id} md={4} sm={6} xs={12} className="mb-3">
+              <Card className="h-100">
+                <Card.Img variant="top" src={favorite.image} alt={favorite.name} style={{ width: "355px", height: "355px" }} />
+                <Card.Body className="d-flex flex-column justify-content-between">
+                  <div>
+                    <Card.Title className="text-center">{favorite.name}</Card.Title>
+                  </div>
+                  <div className="text-center">
+                    <Button variant="danger" onClick={() => removeFromFavorites(favorite.id)} className="bg-orange">Remove from Favorites</Button>
+                  </div>
+                </Card.Body>
+              </Card>
+            </Col>
           ))}
-        </div>
+        </Row>
       </div>
-    </div>
+    </Container>
   );
 };
 

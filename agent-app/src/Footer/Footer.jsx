@@ -12,7 +12,7 @@ const Footer = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(`Subscribed with email: ${email}`);
-    // Reset the form after submission
+  
     setEmail("");
   };
 

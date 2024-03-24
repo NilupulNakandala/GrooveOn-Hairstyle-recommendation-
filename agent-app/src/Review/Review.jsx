@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import "./Review.css"; 
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+import { Toast } from 'react-bootstrap'; 
 
 const ReviewPage = () => {
-  const [reviews, setReviews] = useState([
-    
-  ]);
-
+  const [reviews, setReviews] = useState([]);
   const [newReview, setNewReview] = useState({
     user: "",
     rating: 5,
@@ -46,7 +45,10 @@ const ReviewPage = () => {
       </div>
 
       <div className="add-review-section">
-        <h2>Add Your Review</h2>
+        <h2 className="add-review-heading">
+          Add Your Review
+          <img src="/public/assets/camera/review.jpg" className="add-review-icon" alt="Add Review" />
+        </h2>
         <form>
           <label htmlFor="user">Your Name:</label>
           <input
@@ -86,6 +88,16 @@ const ReviewPage = () => {
           </button>
         </form>
       </div>
+
+      {/* Bootstrap Toast component for the thank you message */}
+      <Toast className="thank-you-toast">
+        <Toast.Header closeButton={false}>
+          Thank You!
+        </Toast.Header>
+        <Toast.Body>
+          Thank you for your review. We appreciate your feedback and hope you continue to enjoy using our website!
+        </Toast.Body>
+      </Toast>
     </div>
   );
 };

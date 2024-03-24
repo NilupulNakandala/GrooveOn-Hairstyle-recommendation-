@@ -6,7 +6,7 @@ import "./contact.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import firstImage from "/public/assets/contact/cbackground.jpg";
 
-// Functional component for the Contact page
+
 const Contact = () => {
   // State to manage form details
   const [formDetails, setFormDetails] = useState({
@@ -34,7 +34,7 @@ const Contact = () => {
     }));
   };
 
-  // Render the Contact component
+
   return (
     <div
       className="container"

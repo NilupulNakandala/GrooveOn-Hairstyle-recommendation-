@@ -3,23 +3,28 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './Navbar.css';
+import logo from "/public/assets/Home/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Function to toggle the navbar open/close
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    // Navigation bar container
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        {/* Brand/logo */}
-        <h4>GrooveON</h4>
+        <div className="d-flex align-items-center">
+          <img
+            src={logo}
+            alt="GrooveON Logo"
+            className="navbar-logo"
+            style={{ width: '50px', height: '50px' }}
+          />
+          <h4 className="ml-2">GrooveON</h4>
+        </div>
 
-        {/* Navbar toggler button for small screens */}
         <button
           className="navbar-toggler"
           type="button"
@@ -29,9 +34,7 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Navbar content */}
         <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`} id="navbarNav">
-          {/* Navbar links */}
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/">
@@ -68,6 +71,13 @@ const Navbar = () => {
 
           </ul>
         </div>
+
+        <img
+          src="/public/assets/Home/logo.png"
+          alt="Small Picture"
+          className="navbar-small-picture"
+          style={{ width: '30px', height: '30px' }}
+        />
       </div>
     </nav>
   );
