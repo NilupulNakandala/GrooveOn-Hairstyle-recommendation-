@@ -48,10 +48,7 @@ const CameraPage = () => {
     try {
       const response = await fetch('http://localhost:3000/get-item/res',{method:'GET'}); 
 
-      // const data = await response.json(); 
-      // const Oshape = data.predictionOutput;
-      // console.log('Response from server:', data);
-      // const shape = data.shape;
+      
 
       if (response.ok) {
         const data = await response.json(); 
@@ -97,7 +94,7 @@ const CameraPage = () => {
 
   return (
     <div className="camera-page-container">
-      <h1 className="camera-page-title">Camera Page</h1>
+      <h1 className="camera-page-title">Get your recommendation using</h1>
 
       <div className="camera-section">
         {cameraStream ? (
@@ -110,7 +107,8 @@ const CameraPage = () => {
           ></video>
         ) : (
           <>
-            <button onClick={startCamera}>Start Camera</button>
+          <p></p>
+            <button onClick={startCamera}>Camera</button>
             {imageSrc && (
               <div>
                 <img src={imageSrc} alt="Captured" className="captured-image" />
@@ -133,7 +131,7 @@ const CameraPage = () => {
           </div>
         )}
 
-        <label htmlFor="fileInput">Upload Image:</label>
+        <label htmlFor="fileInput">Upload a Image:</label>
         <input
           type="file"
           id="fileInput"
@@ -142,7 +140,7 @@ const CameraPage = () => {
         />
 
         {/* Button to upload the image to the database */}
-        <button onClick={handleUploadPhoto}>Photo Upload</button>
+        <button onClick={handleUploadPhoto}>Upload</button>
       </div>
     </div>
   );
