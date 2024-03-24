@@ -28,19 +28,35 @@ const Footer = () => {
       <footer className="py-5">
         <div className="row">
           <div className="col-6 col-md-2 mb-3">
-            <h5>Social Media</h5>
+            <h5>Quick Links</h5>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
                 <a
                   href="https://www.facebook.com"
                   className="nav-link p-0 text-muted"
                   target="_blank"
-                  rel="noopener noreferrer" // Add rel for security
                 >
                   Facebook
                 </a>
               </li>
-              {/* ...other social media links... */}
+              <li className="nav-item mb-2">
+                <a
+                  href="https://twitter.com/"
+                  className="nav-link p-0 text-muted"
+                  target="_blank"
+                >
+                  Twitter
+                </a>
+              </li>
+              <li className="nav-item mb-2">
+                <a
+                  href="https://www.instagram.com"
+                  className="nav-link p-0 text-muted"
+                  target="_blank"
+                >
+                  Instagram
+                </a>
+              </li>
             </ul>
           </div>
 
