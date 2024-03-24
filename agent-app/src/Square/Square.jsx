@@ -22,6 +22,7 @@ const Square = () => {
           </div>
         </div>
         <div className="square-bottom-carts">
+          <h1>Recommended Hairstyles </h1>
           <div className="row">
             <div className="col">
               <div className="cart">
