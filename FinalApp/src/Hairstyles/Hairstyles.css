@@ -1,0 +1,55 @@
+/* Hairstyles.css */
+
+.hairstyles-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.hairstyles-title {
+    font-size: 24px;
+    margin-top: 40px;
+    color: #3498db;
+}
+
+.hairstyles-grid,
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Display 3 items per row */
+    gap: 20px; /* Adjust the gap for spacing between cards */
+    margin-top: 20px;
+}
+
+.hairstyle-card,
+.favorite-card {
+    border: 1px solid #3498db; 
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.hairstyle-image,
+.favorite-image {
+    width: 100%;
+    max-height: 300px; 
+    border-bottom: 1px solid #3498db;
+}
+
+.hairstyle-name,
+.favorite-name {
+    padding: 10px;
+    font-size: 18px;
+}
+
+button {
+    background-color: #3498db; 
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9; 
+}

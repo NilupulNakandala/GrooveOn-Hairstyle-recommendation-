@@ -1,0 +1,65 @@
+/* CameraPage.css */
+
+.camera-page-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .camera-page-title {
+    font-size: 24px;
+    margin-top: 40px;
+  }
+  
+  .camera-section {
+    margin-bottom: 20px;
+  }
+  
+  .camera-preview {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .upload-section {
+    text-align: center;
+  }
+  
+  .captured-image {
+    max-width: 100%;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  #fileInput {
+    margin-top: 5px;
+  }
+  
+  p {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #555;
+  }
+  
