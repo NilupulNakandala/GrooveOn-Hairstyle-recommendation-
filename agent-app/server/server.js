@@ -72,7 +72,7 @@ app.get('/api/feedback', (req, res) => {
       res.status(200).send('Feedback deleted successfully');
     }
   });
-});
+
 
 // PUT request to update a specific feedback by ID
 app.put('/api/feedback/:id', (req, res) => {
