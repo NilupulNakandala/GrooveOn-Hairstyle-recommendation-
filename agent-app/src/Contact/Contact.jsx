@@ -4,7 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./contact.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import firstImage from "/public/assets/contact/cbackground.jpg";
+
 
 // Functional component for the Contact page
 const Contact = () => {
@@ -36,20 +36,13 @@ const Contact = () => {
 
   // Render the Contact component
   return (
-    <div
-      className="container"
-      style={{
-        backgroundImage: `url(${firstImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    
       <div className="row justify-content-center">
         <div className="col-lg-6">
           <div className="contact-container">
             {/* Contact Form */}
             <form className="contact-form">
-              <h4 className="headding">Contact Us</h4>
+              <h3 className="headding">Contact Us</h3>
               <p>
                 Stay In the Loop with  GrooveON exclusive Newsletter!
                 
@@ -120,12 +113,14 @@ const Contact = () => {
                   placeholderText="Select a date"
                   dateFormat="MM/dd/yyyy"
                 />
+                <button type="button" className="btn btn-primary">
+                  Submit
+                </button>
               </div>
             </form>
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
