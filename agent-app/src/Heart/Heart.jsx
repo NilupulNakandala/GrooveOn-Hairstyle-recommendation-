@@ -10,7 +10,7 @@ const Heart = () => {
   return (
     <div>
       <div className="jumbotron mt-3">
-        <h1 className="display-4"> Your Face Shape is Heart Shape</h1>
+        <h1 className="display-4"> Your Face is Heart Shape</h1>
       </div>
       <div className="heart-container">
         <div className="heart-top-cart">
