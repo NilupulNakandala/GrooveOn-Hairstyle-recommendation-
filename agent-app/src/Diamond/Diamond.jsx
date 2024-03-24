@@ -10,7 +10,7 @@ const Diamond = () => {
   return (
     <div>
       <div className="jumbotron mt-3">
-        <h1 className="display-4">Diamond Shape</h1>
+        <h1 className="display-4">Your Face Shape is Diamond Shape</h1>
       </div>
       <div className="diamond-container">
         <div className="diamond-top-cart">
@@ -22,6 +22,7 @@ const Diamond = () => {
           </div>
         </div>
         <div className="diamond-bottom-carts">
+          <h1>Recommended Hairstyles </h1>
           <div className="row">
             <div className="col">
               <div className="cart">
