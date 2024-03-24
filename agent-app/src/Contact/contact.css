@@ -21,20 +21,13 @@
   flex-direction: column;
 }
 
-.form-group {
-  margin-bottom: 20px;
-}
-
-
-
 .conBut,
 .react-datepicker-wrapper {
   width: 100%;
-  padding: 12px;
+  padding-bottom: 10%;
   border-radius: 6px;
-  border: 2px solid #3498db;
   box-sizing: border-box;
-  margin-top: 10px;
+  
   font-size: 16px;
 }
 
@@ -60,12 +53,13 @@
 .react-datepicker-wrapper:focus {
   outline: none;
   border-color: #555;
+  
 }
 
 .conBut2 {
   background-color: #27ae60;
   font-weight: bold;
-  margin-top: 15px;
+  
 }
 
 .conBut2:hover {
@@ -76,7 +70,8 @@ p{
   font-weight: bold;
 }
 
-.btn {
+.btn-primary {
      align-items: center;
-     margin-top: 15px;
+     margin-top: 5%;
   } 
+  
