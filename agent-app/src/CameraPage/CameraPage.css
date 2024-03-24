@@ -3,7 +3,9 @@
 .camera-page-container {
     max-width: 600px;
     margin: auto;
+    padding-top: 5% !important;
     padding: 20px;
+
     text-align: center;
   }
   
