@@ -1,0 +1,40 @@
+.diamond-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .diamond-top-cart {
+    margin-bottom: 30px;
+  }
+  
+  .diamond-bottom-carts .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 15px;
+  }
+  
+  .diamond-bottom-carts .col {
+    flex: 1;
+  }
+  
+  .cart {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .cart img {
+    max-width: 80%;
+    border-radius: 7px;
+    margin-bottom: 7px;
+  }
+  
+  .cart p {
+    font-size: 1.3rem; 
+  }
+  
