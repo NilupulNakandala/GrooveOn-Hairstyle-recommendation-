@@ -1,0 +1,34 @@
+/* home.css */
+
+.jumbotron {
+  background-color: #cca300; 
+  color: #ecf0f1; 
+  padding: 3rem;
+  text-align: center;
+}
+
+.jumbotron h1 {
+  font-size: 3rem;
+  color:white;
+}
+#recommendations-btn {
+  background-color: white; }
+.jumbotron p {
+  font-size: 1.5rem;
+  color:black;
+}
+
+.jumbotron a.btn-primary {
+
+  color: #fff; 
+  margin-top: 1rem;
+}
+
+.my-carousel {
+  margin-top: 2rem;
+}
+
+
+
+
+

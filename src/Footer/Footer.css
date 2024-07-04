@@ -1,0 +1,31 @@
+.container {
+  background-color: #d2b48c;
+}
+
+h5 {
+  color: #343a40;
+}
+.text-muted.address {
+  font-style: italic;
+}
+.form-control {
+  margin-bottom: 10px;
+}
+.btn-group {
+  margin-top: 10px;
+}
+
+.list-unstyled li a {
+  color: #212529;
+}
+.list-unstyled li a:hover {
+  text-decoration: none;
+}
+@media (max-width: 768px) {
+  .col-md-2 {
+    margin-bottom: 20px;
+  }
+  .col-md-5 {
+    margin-top: 20px;
+  }
+}
