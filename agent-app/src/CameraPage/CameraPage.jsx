@@ -1,150 +1,147 @@
-import React, { useState, useRef } from 'react';
-import './CameraPage.css';
-import leftImage from "/public/assets/camera/left.jpeg"; 
-import rightImage from "/public/assets/camera/right.jpg"; 
+import { useState, useRef, useEffect } from 'react'
+import Webcam from 'react-webcam'
+import './CameraPage.css'
+import leftImage from '/public/assets/camera/left.jpeg'
 
 const CameraPage = () => {
-  const [cameraStream, setCameraStream] = useState(null);
-  const [imageSrc, setImageSrc] = useState(null);
-  const videoRef = useRef();
-
-  const startCamera = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-      setCameraStream(stream);
-      videoRef.current.srcObject = stream;
-    } catch (error) {
-      console.error('Error accessing camera:', error);
-    }
-  };
-
-  const captureImage = async () => {
-    const video = videoRef.current;
-    const canvas = document.createElement('canvas');
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-
-    const dataUrl = canvas.toDataURL('image/png');
-    setImageSrc(dataUrl);
-
-    if (cameraStream) {
-      const tracks = cameraStream.getTracks();
-      tracks.forEach((track) => track.stop());
-      setCameraStream(null);
-    }
-  };
-
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImageSrc(reader.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+  const [imageSrc, setImageSrc] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
+  const [isCameraOpen, setIsCameraOpen] = useState(false)
+  const webcamRef = useRef(null)
 
   const handleUploadPhoto = async () => {
-    try {
-      const response = await fetch('http://localhost:3000/get-item/res',{method:'GET'}); 
-
-      if (response.ok) {
-        const data = await response.json(); 
-        const Oshape = data.predictionOutput;
-        console.log('Response from server:', data);
-        const shape = data.shape;
-        switch (Oshape) {
-          case 'heart\r\n':
-            window.location.href = '/Heart'; 
-            break;
-          case 'diamond\r\n':
-            window.location.href = '/Diamond'; 
-            break;
-          case 'square\r\n':
-            window.location.href = '/Square'; 
-            break;
-          case 'round\r\n':
-            window.location.href = '/Round'; 
-            break;
-          case 'oblong\r\n':
-            window.location.href = '/Oblong'; 
-            break;
-          default:
-            console.warn('Unknown shape received:', shape);
-            window.location.href = '/Errorpage';
-            break;
-        }
-        
-      } else {
-        console.error('Error fetching data:', await response.text());
-        window.location.href = '/Errorpage'
-        
-      }
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      window.location.href = '/Errorpage'
-      
+    if (!imageSrc) {
+      alert('Please select or capture an image first.')
+      return
     }
-  };
+
+    setIsLoading(true)
+    setTimeout(async () => {
+      try {
+        const formData = new FormData()
+        formData.append('file', imageSrc)
+
+        const response = await fetch(
+          'http://localhost:3001/groove/recommendation',
+          {
+            method: 'POST',
+            body: formData,
+          }
+        )
+
+        const data = await response.json()
+
+        if (data?.imageUpdated?.type && response.ok) {
+          const Oshape = data?.imageUpdated?.type
+          setImageSrc(null)
+          setIsLoading(false)
+          if (Oshape === 'heart') {
+            window.location.href = '/Heart'
+          } else if (Oshape === 'diamond') {
+            window.location.href = '/Diamond'
+          } else if (Oshape === 'square') {
+            window.location.href = '/Square'
+          } else if (Oshape === 'round') {
+            window.location.href = '/Round'
+          } else if (Oshape === 'oblong') {
+            window.location.href = '/Oblong'
+          } else {
+            window.location.href = '/Errorpage'
+          }
+        } else {
+          setIsLoading(false)
+          window.location.href = '/Errorpage'
+        }
+      } catch (error) {
+        setIsLoading(false)
+        window.location.href = '/Errorpage'
+      }
+    }, 2000)
+  }
+
+  const handleCapturePhoto = async () => {
+    const imageSrc = webcamRef.current.getScreenshot()
+    const response = await fetch(imageSrc)
+    const blob = await response.blob()
+    setImageSrc(blob)
+    setIsCameraOpen(false)
+  }
+
+  useEffect(() => {
+    if (imageSrc) {
+      handleUploadPhoto()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [imageSrc])
 
   return (
-    <div className="camera-page-container">
-      <h1 className="camera-page-title">Find Your Style</h1>
-
-      <div className="camera-section">
-        {cameraStream ? (
-          <video
-            id="camera-preview"
-            className="camera-preview"
-            autoPlay
-            playsInline
-            ref={videoRef}
-          ></video>
-        ) : (
-          <>
-            <div className="button-container">
-              <img src={leftImage} alt="Left" className="rounded-circle side-image" />
-              <button id="start-camera" onClick={startCamera} className="btn btn-primary">Start Camera</button>
-              <img src={rightImage} alt="Right" className="rounded-circle side-image" />
+    <div className="camera-page-container" style={{ marginTop: '40px' }}>
+      {isLoading ? (
+        <div className="loading-screen">
+          <p>Loading...</p>
+        </div>
+      ) : (
+        <>
+          <h1
+            className="camera-page-title"
+            style={{ fontWeight: '500', textTransform: 'uppercase' }}
+          >
+            Find Your Style
+          </h1>
+          <div className="upload-section">
+            <img
+              src={leftImage}
+              alt="Left"
+              className="rounded-circle side-image"
+              style={{ padding: '20px 0px' }}
+            />
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <input
+                type="file"
+                id="fileInput"
+                accept="image/*"
+                onChange={(e) => setImageSrc(e.target.files[0])}
+              />
+              {/* <button
+                className="btn btn-primary"
+                style={{ height: '50px', marginTop: '5px', marginLeft: '2px' }}
+                onClick={handleUploadPhoto}
+              >
+                Submit
+              </button> */}
+              <button
+                className="btn btn-secondary"
+                style={{ height: '50px', marginTop: '10px', marginLeft: '2px' }}
+                onClick={() => setIsCameraOpen(true)}
+              >
+                Camera
+              </button>
             </div>
-            {imageSrc && (
-              <div>
-                <img src={imageSrc} alt="Captured" className="captured-image" />
-                <p className="text-center">Preview of Captured Image</p>
+            {isCameraOpen && (
+              <div className="camera-container" style={{ marginTop: '20px' }}>
+                <Webcam
+                  audio={false}
+                  ref={webcamRef}
+                  screenshotFormat="image/jpeg"
+                />
+                <button
+                  className="btn btn-success"
+                  style={{ marginTop: '10px' }}
+                  onClick={handleCapturePhoto}
+                >
+                  Capture Photo
+                </button>
               </div>
             )}
-          </>
-        )}
-
-        {cameraStream && (
-          <button id="capture-image" onClick={captureImage} className="btn btn-primary">Capture Image</button>
-        )}
-      </div>
-
-      <div className="upload-section">
-        {imageSrc && (
-          <div>
-            <img src={imageSrc} alt="Captured" className="captured-image" />
-            <p className="text-center">Preview of Upload Image</p>
+            <p className="text-center mt-4">
+              Thank you for using our camera feature. We will be using your face
+              data for the development of our machine learning model.
+            </p>
           </div>
-        )}
-
-        <input
-          type="file"
-          id="fileInput"
-          accept="image/*"
-          onChange={handleFileChange}
-        />
-
-        <button id="upload-photo" onClick={handleUploadPhoto} className="btn btn-primary">Select Already Taken Photo</button>
-        <p className="text-center mt-4">
-        Thank you for using our camera feature. We will be using your face data for the development of our machine learning model.
-      </p>
-      </div>
+        </>
+      )}
     </div>
-  );
-};
+  )
+}
 
-export default CameraPage;
+export default CameraPage

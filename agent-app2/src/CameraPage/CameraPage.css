@@ -1,0 +1,101 @@
+
+
+.camera-page-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+
+
+.camera-page-title {
+  font-size: 24px;
+  margin-top: 40px;
+}
+
+.camera-section {
+  margin-bottom: 20px;
+}
+
+.camera-preview {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+button#start-camera,
+button#upload-photo {
+  background-color: #cca300;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+button#start-camera:hover,
+button#upload-photo:hover {
+  background-color: greenyellow; 
+}
+
+.upload-section {
+  text-align: center;
+}
+
+.captured-image {
+  max-width: 100%;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+#fileInput {
+  margin-top: 5px;
+}
+
+p {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #555;
+}
+/* CameraPage.css */
+
+.camera-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.camera-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+}
+
+.side-image {
+  width: 150px; 
+  height: auto;
+  border-radius: 50%;
+  margin: 0 100px; }
+
+#start-camera {
+  margin: 0 20px; 
+}
+.camera-page-title {
+  font-size: 2.5rem; 
+  margin-bottom: 20px; 
+}
+

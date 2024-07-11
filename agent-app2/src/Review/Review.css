@@ -1,0 +1,92 @@
+/* ReviewPage.css */
+
+.review-page-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+  .add-review-heading {
+    display: flex;
+    align-items: center;
+  }
+  
+  .add-review-icon {
+    margin-left: 120px;
+    width: 70px;
+    height: auto;
+  }
+
+  .thank-you-toast {
+    position: absolute;
+    top: 90px;
+    right: 150px;
+    width: 300px;
+    background-color:yellow ;
+    color:black;
+    border-radius: 8px;
+    
+}
+  
+  
+  .review-page-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .reviews-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .review-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .review-user {
+    font-weight: bold;
+  }
+  
+  .review-rating {
+    color: #ff9800; 
+  }
+  
+  .add-review-section {
+    margin-top: 30px;
+  }
+  
+  form {
+    display: grid;
+    gap: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+  }
+  
+  button {
+    background-color: #4caf50; /* Green color for the button */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Darker green color on hover */
+  }
+  

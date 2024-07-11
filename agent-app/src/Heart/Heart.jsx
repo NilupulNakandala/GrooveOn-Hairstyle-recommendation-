@@ -1,4 +1,3 @@
-import React from "react";
 import "./Heart.css";
 import heart from "/public/assets/heart/heart1.png";
 import thelongfrindge from "/public/assets/heart/thelongfrindge.jpg";
@@ -8,7 +7,7 @@ import longhairsidepart from "/public/assets/heart/longhairsidepart.jpg";
 
 const Heart = () => {
   return (
-    <div>
+    <div style={{ marginTop: '68px' }}>
       <div className="jumbotron mt-3">
         <h1 className="display-4">Heart Shape</h1>
       </div>

@@ -1,21 +1,20 @@
-import React from "react";
-import "./Diamond.css";
-import diamond from "/public/assets/diamond/diamond1.png";
-import fauxhawk from "/public/assets/diamond/fauxhawk.jpg";
-import longslickback from "/public/assets/diamond/longslickback.jpg";
-import sweepingfringe from "/public/assets/diamond/sweepingfringe.jpg";
-import shortaffro from "/public/assets/diamond/shortaffro.jpg";
+import './Diamond.css'
+import diamond from '/public/assets/diamond/diamond1.png'
+import fauxhawk from '/public/assets/diamond/fauxhawk.jpg'
+import longslickback from '/public/assets/diamond/longslickback.jpg'
+import sweepingfringe from '/public/assets/diamond/sweepingfringe.jpg'
+import shortaffro from '/public/assets/diamond/shortaffro.jpg'
 
 const Diamond = () => {
   return (
-    <div>
+    <div style={{ marginTop: '68px' }}>
       <div className="jumbotron mt-3">
         <h1 className="display-4">Diamond Shape</h1>
       </div>
       <div className="diamond-container">
         <div className="diamond-top-cart">
           <div className="cart">
-            <img src={diamond} alt="diamond1"/>
+            <img src={diamond} alt="diamond1" />
           </div>
           <div className="cart text-cart">
             <p>Face highly angular and somewhat bony, widest at temples</p>
@@ -25,13 +24,13 @@ const Diamond = () => {
           <div className="row">
             <div className="col">
               <div className="cart">
-                <img src={fauxhawk} alt="fauxhawk"/>
+                <img src={fauxhawk} alt="fauxhawk" />
                 <p>Fauxhawk</p>
               </div>
             </div>
             <div className="col">
               <div className="cart">
-                <img src={longslickback} alt="longslickback"/>
+                <img src={longslickback} alt="longslickback" />
                 <p>Long Slick Back</p>
               </div>
             </div>
@@ -39,13 +38,13 @@ const Diamond = () => {
           <div className="row">
             <div className="col">
               <div className="cart">
-                <img src={shortaffro} alt="shortaffro"/>
+                <img src={shortaffro} alt="shortaffro" />
                 <p>Short Affro</p>
               </div>
             </div>
             <div className="col">
               <div className="cart">
-                <img src={sweepingfringe} alt="sweepingfringe"/>
+                <img src={sweepingfringe} alt="sweepingfringe" />
                 <p>Sweeping Fringe</p>
               </div>
             </div>
@@ -53,7 +52,7 @@ const Diamond = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Diamond;
+export default Diamond

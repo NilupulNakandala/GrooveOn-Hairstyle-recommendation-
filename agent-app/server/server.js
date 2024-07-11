@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -10,14 +9,6 @@ const mysql = require('mysql');
 
 const app = express();
 //const PORT = process.env.PORT || 5000;
-=======
-const express = require('express');
-const bodyParser = require('body-parser');
-const mysql = require('mysql');
-const cors = require('cors');
-
-const app = express();
->>>>>>> Stashed changes
 const port = 3001;
 
 app.use(cors());
@@ -25,17 +16,10 @@ app.use(bodyParser.json());
 
 // MySQL Connection
 const db = mysql.createConnection({
-<<<<<<< Updated upstream
   host: "localhost",
   user: "root",
   password: "mySQL@123",//password for the local sql server
   database: "feedback",
-=======
-  host: 'localhost',
-  user: 'root',
-  password: 'shevin123',
-  database: 'feedback',
->>>>>>> Stashed changes
 });
 
 db.connect(err => {
@@ -78,7 +62,6 @@ app.get('/api/feedback', (req, res) => {
   });
 });
 
-<<<<<<< Updated upstream
 // REST API endpoints  --sql code end with comment mySQL@123
 app.post('/api/feedback', (req, res) => {
   const { message } = req.body;
@@ -135,10 +118,6 @@ app.listen(port, () => {
 // Add review endpoint
 app.post("/api/reviews", (req, res) => {
   const newReview = req.body;
-=======
-app.delete('/api/feedback/:id', (req, res) => {
-  const feedbackId = req.params.id;
->>>>>>> Stashed changes
 
   db.query('DELETE FROM feedback WHERE id = ?', [feedbackId], (err, result) => {
     if (err) {
