@@ -1,0 +1,62 @@
+.home {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #666;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.image-slider {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.image-slider img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+    padding-bottom: 200px;
+}
+
+.image-slider:hover img {
+    transform: scale(1.05);
+}
+
+.navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.navigation button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.navigation button.active {
+    background-color: #fff;
+}
