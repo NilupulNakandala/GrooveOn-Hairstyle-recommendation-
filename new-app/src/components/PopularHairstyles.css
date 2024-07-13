@@ -1,0 +1,47 @@
+.popular-hairstyles {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hairstyle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.hairstyle-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hairstyle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hairstyle-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.hairstyle-card h3 {
+    padding: 10px 15px;
+    margin: 0;
+    background-color: #f8f8f8;
+}
+
+.hairstyle-card p {
+    padding: 15px;
+    margin: 0;
+    font-size: 0.9em;
+    color: #666;
+}
