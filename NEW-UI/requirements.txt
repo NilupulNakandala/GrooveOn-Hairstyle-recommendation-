@@ -1,5 +1,0 @@
-tensorflow
-pathlib
-keras
-opencv-python
-numpy
