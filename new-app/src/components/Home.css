@@ -1,62 +1,70 @@
-.home {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+.Home {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-image: url('../img/home.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.logo {
+    height: 20px;
+}
+.nav-center{
+    font-size : 2rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     text-align: center;
 }
 
 h1 {
-    color: #333;
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    font-size: 3rem;
+    margin-bottom: 0rem;
+}
+h3{
+
 }
 
-p {
-    color: #666;
-    font-size: 1.1em;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
 
-.image-slider {
-    position: relative;
-    max-width: 800px;
-    margin: 40px auto;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
+    .nav-left, .nav-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.image-slider img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.5s ease;
-    padding-bottom: 200px;
-}
+    .navbar a {
+        margin: 0.5rem 0;
+    }
 
-.image-slider:hover img {
-    transform: scale(1.05);
-}
-
-.navigation {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-}
-
-.navigation button {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.navigation button.active {
-    background-color: #fff;
+    h1 {
+        font-size: 2rem;
+    }
 }

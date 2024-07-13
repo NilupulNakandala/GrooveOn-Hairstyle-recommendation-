@@ -1,25 +1,30 @@
 import React from 'react';
 import './Home.css';
-import ImageSlider from './ImageSlider';
-import hair1 from '../img/hair1.jpg';
-import hair2 from '../img/hair2.jpg';
-import hair3 from '../img/hair3.jpg';
-
 
 const Home = () => {
-
-  const images = [hair1, hair2, hair3];
-  
-
-  return (
-    <div className="home">
-      <h1>Welcome to GrooveON</h1>
-      <p>Your Ultimate Destination for Perfect Hairstyles. Explore the latest trends, find your ideal look, and transform your appearance with just a scan.</p>
-      <p>Ready for a new hairstyle? Start your journey with GrooveON today.</p>
-      
-      <ImageSlider images={images} />
-    </div>
-  );
+    return (
+        <div className="Home">
+            <nav className="navbar">
+                <div className="nav-left">
+                    <a href="Home">Home</a>
+                    <a href="#Recommendations">Recommendations</a>
+                    <a href="#Popular">Popular Hairstyles</a>
+                </div>
+                <div className="nav-center">
+                    <a href="Home">GrooveOn</a>
+                </div>
+                <div className="nav-right">
+                    <a href="#About">About US</a>
+                    <a href="#Contact ">Contact US</a>
+                    <a href="#Review">Review</a>
+                </div>
+            </nav>
+            <main>
+                <h1>Elevate Your HairStyle With Modern Technology</h1>
+                <h3>Welcome to GrooveOn</h3>
+            </main>
+        </div>
+    );
 };
 
 export default Home;
