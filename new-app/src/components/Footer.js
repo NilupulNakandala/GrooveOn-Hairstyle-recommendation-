@@ -40,7 +40,7 @@ const Footer = () => {
       </div>
       <div className="copyright">
         © 2023 Copyright:
-        <a href="https://tw-elements.com/">TW Elements</a>
+        <a href="grooveon.vercel.app">GrooveOn</a>
       </div>
     </footer>
   );

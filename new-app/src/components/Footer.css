@@ -43,7 +43,7 @@
   /* Dark mode styles */
   @media (prefers-color-scheme: dark) {
     .footer {
-      background-color: #4b5563;
+      background-color: #080b0e;
     }
   
     .social-icon {
@@ -51,7 +51,7 @@
     }
   
     .copyright {
-      background-color: #374151;
+      background-color: #080b0f;
       color: #e5e5e5;
     }
   
