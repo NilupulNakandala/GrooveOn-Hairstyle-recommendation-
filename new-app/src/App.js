@@ -2,7 +2,7 @@ import React from 'react';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import './App.css';
-import ImageUpload from './components/ImageUpload';
+import Recommendation from './components/Recommendation';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PopularHairstyles from './components/PopularHairstyles';
 
@@ -11,8 +11,8 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/upload" element={<ImageUpload />} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/Recommendation" element={<Recommendation />} />
           <Route path="/Popular" element={<PopularHairstyles />} />
 
         </Routes>
