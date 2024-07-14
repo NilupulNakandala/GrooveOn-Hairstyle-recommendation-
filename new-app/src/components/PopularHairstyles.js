@@ -49,6 +49,24 @@ const hairstyles = [
 
 const PopularHairstyles = () => {
   return (
+    <div className="Popular">
+        <nav className="navbar">
+            <div className="nav-left">
+                <a href="/Home">Home</a>
+                <a href="/Recommendation">Recommendations</a>
+                <a href="/PopularHairstyles">Popular Hairstyles</a>
+            </div>
+            <div className="nav-center">
+                <a href="Home">GrooveOn</a>
+            </div>
+            <div className="nav-right">
+                <a href="#About">About US</a>
+                <a href="#Contact ">Contact US</a>
+                <a href="#Review">Review</a>
+            </div>
+        </nav>
+   
+
     <div className="popular-hairstyles">
       <h1>Popular Hairstyles</h1>
       <div className="hairstyle-grid">
@@ -60,6 +78,7 @@ const PopularHairstyles = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };

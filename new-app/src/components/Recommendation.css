@@ -5,6 +5,7 @@
     background-size: cover;
     background-position: center;
     min-height: 100vh; 
+    text-align: center;
 }
 
 .navbar {
@@ -33,10 +34,11 @@
 }
 .image-upload-container {
     color: #ffffff;
-    max-width: 80%;
+    max-width: 50%;
     margin: 0 auto;
     padding: 20px;
     padding-top: 20rem; 
+    align-items: center;
   }
   
   /* Responsive Adjustments */
@@ -97,4 +99,7 @@ button:disabled {
 }
 button:disabled{
     background-color: #4CAF50;
+}
+.form{
+    align-items: center;
 }

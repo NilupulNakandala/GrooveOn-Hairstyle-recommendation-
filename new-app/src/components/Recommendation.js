@@ -46,9 +46,9 @@ const Recommendation = () => {
                 <a href="Home">GrooveOn</a>
             </div>
             <div className="nav-right">
-                <a href="#About">About US</a>
-                <a href="#Contact ">Contact US</a>
-                <a href="#Review">Review</a>
+                <a href="/About">About US</a>
+                <a href="/Contact ">Contact US</a>
+                <a href="/Review">Review</a>
             </div>
         </nav>
     

@@ -6,7 +6,8 @@ const Home = () => {
         <div className="Home">
             <nav className="navbar">
                 <div className="nav-left">
-                    <a href="/Home">Home</a>
+                    <a href="/">Home</a>
+                    
                     <a href="/Recommendation">Recommendations</a>
                     <a href="/PopularHairstyles">Popular Hairstyles</a>
                 </div>
@@ -14,9 +15,9 @@ const Home = () => {
                     <a href="Home">GrooveOn</a>
                 </div>
                 <div className="nav-right">
-                    <a href="#About">About US</a>
-                    <a href="#Contact ">Contact US</a>
-                    <a href="#Review">Review</a>
+                    <a href="/About">About US</a>
+                    <a href="/Contact">Contact US</a>
+                    <a href="/Review">Review</a>
                 </div>
             </nav>
             <main>
