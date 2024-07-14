@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Contact {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  deleted   Boolean  @default(false)
+  name      String
+  email     String
+  phone     Float
+  message   String
+  date      DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Email {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  deleted   Boolean  @default(false)
+  email     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Review {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  deleted   Boolean  @default(false)
+  name      String
+  rating    Int
+  comment   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Recommendation {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  File      File?    @relation(fields: [fileId], references: [id])
+  fileId    String?  @unique @db.ObjectId
+  type      String?
+  deleted   Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model File {
+  id             String          @id @default(auto()) @map("_id") @db.ObjectId
+  deleted        Boolean         @default(false)
+  Recommendation Recommendation?
+  url            String
+  mimeType       String
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+}
