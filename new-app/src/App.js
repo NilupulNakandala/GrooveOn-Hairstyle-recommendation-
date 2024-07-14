@@ -1,17 +1,18 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Footer from './components/Footer';
-import './App.css';
 import Recommendation from './components/Recommendation';
 import Contact from './components/Contact';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PopularHairstyles from './components/PopularHairstyles';
 import About from './components/About';
 import NotFound from './components/NotFound';
+import './App.css';
 
 function App() {
   return (
     <div className="App">
+      <title>Dynamic Website Title (using React Helmet)</title>
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />

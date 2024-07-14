@@ -7,6 +7,10 @@ import hair3 from '../img/hair3.jpg';
 import hair4 from '../img/hair4.jpeg';
 import hair5 from '../img/hair5.jpeg';
 import hair6 from '../img/hair6.jpeg';
+import hair7 from '../img/hair7.jpeg';
+import hair8 from '../img/hair8.jpeg';
+
+
 
 const hairstyles = [
   {
@@ -44,7 +48,19 @@ const hairstyles = [
     name: "Textured Crop",
     image: hair6,
     description: "A short, choppy cut with lots of texture, popular for both men and women."
-  }
+  },
+  {
+    id: 7,
+    name: "The Bold and Dapper",
+    image: hair7,
+    description: "High fade on the sides and back with a distinct shaved part for a sharp and defined look."
+  },
+  {
+    id: 8,
+    name: "Box Fade",
+    image: hair8,
+    description: "Keeps the sides clean and close to the skin, while more weight is kept on top, allowing for a fuller and tighter curl."
+  },
 ];
 
 const PopularHairstyles = () => {
@@ -52,7 +68,7 @@ const PopularHairstyles = () => {
     <div className="Popular">
         <nav className="navbar">
             <div className="nav-left">
-                <a href="/Home">Home</a>
+                <a href="/">Home</a>
                 <a href="/Recommendation">Recommendations</a>
                 <a href="/PopularHairstyles">Popular Hairstyles</a>
             </div>

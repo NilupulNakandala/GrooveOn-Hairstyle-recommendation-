@@ -17,7 +17,7 @@
     top: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+   
 }
 
 .navbar a {
@@ -89,9 +89,15 @@ button:disabled {
 }
 
 .recommendations {
-    margin-top: 20px;
-    text-align: left;
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    align-items: center;
+    background-color:#bdaaa8;
+    border-radius: 10px;
+    color:black;
 }
+
 
 .recommendations ul {
     list-style-type: none;
@@ -106,4 +112,5 @@ button:disabled{
 }
 .form{
     align-items: center;
+    background-color: rgba(194, 179, 179, 0.8);
 }
