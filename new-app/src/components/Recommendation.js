@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './ImageUpload.css';
+import './Recommendation.css';
 
-const ImageUpload = () => {
+const Recommendation = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [recommendations, setRecommendations] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -35,6 +35,23 @@ const ImageUpload = () => {
   };
 
   return (
+    <div className="Recommendation">
+        <nav className="navbar">
+            <div className="nav-left">
+                <a href="/Home">Home</a>
+                <a href="/Recommendation">Recommendations</a>
+                <a href="/PopularHairstyles">Popular Hairstyles</a>
+            </div>
+            <div className="nav-center">
+                <a href="Home">GrooveOn</a>
+            </div>
+            <div className="nav-right">
+                <a href="#About">About US</a>
+                <a href="#Contact ">Contact US</a>
+                <a href="#Review">Review</a>
+            </div>
+        </nav>
+    
     <div className="image-upload-container">
       <h2>Upload Your Image for Hair Recommendations</h2>
       <form onSubmit={handleSubmit}>
@@ -49,7 +66,7 @@ const ImageUpload = () => {
             <img src={selectedImage} alt="Preview" />
           </div>
         )}
-        <button type="submit" disabled={!selectedImage || isLoading}>
+        <button type="submit"  disabled={!selectedImage || isLoading}>
           {isLoading ? 'Getting Recommendations...' : 'Get Recommendations'}
         </button>
       </form>
@@ -64,7 +81,8 @@ const ImageUpload = () => {
         </div>
       )}
     </div>
+    </div>
   );
 };
 
-export default ImageUpload;
+export default Recommendation;

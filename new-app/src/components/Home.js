@@ -6,9 +6,9 @@ const Home = () => {
         <div className="Home">
             <nav className="navbar">
                 <div className="nav-left">
-                    <a href="Home">Home</a>
-                    <a href="#Recommendations">Recommendations</a>
-                    <a href="#Popular">Popular Hairstyles</a>
+                    <a href="/Home">Home</a>
+                    <a href="/Recommendation">Recommendations</a>
+                    <a href="/PopularHairstyles">Popular Hairstyles</a>
                 </div>
                 <div className="nav-center">
                     <a href="Home">GrooveOn</a>

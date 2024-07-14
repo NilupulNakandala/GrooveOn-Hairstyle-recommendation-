@@ -39,8 +39,8 @@ const Footer = () => {
         </div>
       </div>
       <div className="copyright">
-        © 2023 Copyright:
-        <a href="grooveon.vercel.app">GrooveOn</a>
+        © 2024 Copyright:
+        <a href="grooveon.vercel.app"> GrooveOn</a>
       </div>
     </footer>
   );

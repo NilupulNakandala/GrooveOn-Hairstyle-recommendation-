@@ -1,0 +1,100 @@
+.Recommendation{
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-image: url('../img/recommendation.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; 
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.logo {
+    height: 20px;
+}
+.nav-center{
+    font-size : 2rem;
+}
+.image-upload-container {
+    color: #ffffff;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 20rem; 
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .navbar a {
+      font-size: 0.8rem; /* Adjust font size for smaller screens */
+    }
+  
+    .nav-center {
+      font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+  
+    .image-upload-container {
+      padding-top: calc(30vh); /* Adjust padding for smaller screens */
+    }
+  }
+
+.file-input {
+    margin-bottom: 20px;
+}
+
+.image-preview {
+    margin-bottom: 20px;
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.recommendations {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.recommendations ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recommendations li {
+    margin-bottom: 10px;
+}
+button:disabled{
+    background-color: #4CAF50;
+}
