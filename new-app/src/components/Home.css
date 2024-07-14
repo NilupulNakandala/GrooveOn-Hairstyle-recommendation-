@@ -1,0 +1,68 @@
+.Home {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-image: url('../img/home.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.logo {
+    height: 20px;
+}
+.nav-center{
+    font-size : 2rem;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0rem;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-left, .nav-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar a {
+        margin: 0.5rem 0;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,52 @@
+.about-us {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/about.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    display: flex;
+    -webkit-text-stroke: 0.2px black;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.logo {
+    height: 20px;
+}
+.nav-center{
+    font-size : 2rem;
+    text-align: center;
+}
+  
+  .about-us h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    align-items: left;
+    text-align: left;
+  }
+  
+  .about-us p {
+    font-size: 1.3rem;
+    max-width: 600px;
+  }
