@@ -24,6 +24,7 @@ const Home = () => {
                 <h1>Elevate Your HairStyle With Modern Technology</h1>
                 <h3>Welcome to GrooveOn</h3>
             </main>
+            
         </div>
     );
 };
