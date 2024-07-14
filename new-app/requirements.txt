@@ -1,4 +1,4 @@
-ensorflow
+tensorflow
 pathlib
 keras
 opencv-python
