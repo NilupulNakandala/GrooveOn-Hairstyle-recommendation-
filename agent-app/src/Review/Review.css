@@ -5,28 +5,6 @@
     margin: auto;
     padding: 20px;
   }
-  .add-review-heading {
-    display: flex;
-    align-items: center;
-  }
-  
-  .add-review-icon {
-    margin-left: 120px;
-    width: 70px;
-    height: auto;
-  }
-
-  .thank-you-toast {
-    position: absolute;
-    top: 90px;
-    right: 150px;
-    width: 300px;
-    background-color:yellow ;
-    color:black;
-    border-radius: 8px;
-    
-}
-  
   
   .review-page-title {
     font-size: 24px;
@@ -50,7 +28,7 @@
   }
   
   .review-rating {
-    color: #ff9800; 
+    color: #ff9800; /* Orange color for ratings */
   }
   
   .add-review-section {
@@ -89,4 +67,27 @@
   button:hover {
     background-color: #45a049; /* Darker green color on hover */
   }
+
+  /*new CSS*/
+  .thank-you-toast {
+    position: absolute;
+    top: 90px;
+    right: 150px;
+    width: 300px;
+    background-color:yellow ;
+    color:black;
+    border-radius: 8px;
+  }
+    
+
+
+.add-review-heading {
+  display: flex;
+  align-items: center;
+}
+.add-review-icon {
+  margin-left: 120px;
+  width: 70px;
+  height: auto;
+}
   
